@@ -5,9 +5,13 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trees", "Trees", "{4EB8F4F9-D67C-4D02-AED8-DC33B08E0037}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Trees", "Algorithms.Trees\Algorithms.Trees.csproj", "{179B753B-E990-4FC4-BA60-A108A191F198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.Trees", "Algorithms.Trees\Algorithms.Trees.csproj", "{179B753B-E990-4FC4-BA60-A108A191F198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.ConsoleRunner", "Algorithms.ConsoleRunner\Algorithms.ConsoleRunner.csproj", "{F8DC4CB8-BEF9-4B80-9F57-43C216B41A62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.ConsoleRunner", "Algorithms.ConsoleRunner\Algorithms.ConsoleRunner.csproj", "{F8DC4CB8-BEF9-4B80-9F57-43C216B41A62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedLists", "LinkedLists", "{8DA3D872-4162-43D1-866B-6AEC11748D24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.LinkedLists", "Algorithms.LinkedLists\Algorithms.LinkedLists.csproj", "{062AFDA1-EBBD-4E98-96F9-09B8222285D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +27,17 @@ Global
 		{F8DC4CB8-BEF9-4B80-9F57-43C216B41A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8DC4CB8-BEF9-4B80-9F57-43C216B41A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8DC4CB8-BEF9-4B80-9F57-43C216B41A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062AFDA1-EBBD-4E98-96F9-09B8222285D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062AFDA1-EBBD-4E98-96F9-09B8222285D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062AFDA1-EBBD-4E98-96F9-09B8222285D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062AFDA1-EBBD-4E98-96F9-09B8222285D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{179B753B-E990-4FC4-BA60-A108A191F198} = {4EB8F4F9-D67C-4D02-AED8-DC33B08E0037}
+		{062AFDA1-EBBD-4E98-96F9-09B8222285D3} = {8DA3D872-4162-43D1-866B-6AEC11748D24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A234979D-7080-4CC0-A011-ABF430A3F960}
