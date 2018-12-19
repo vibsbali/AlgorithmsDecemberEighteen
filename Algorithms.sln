@@ -11,7 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.ConsoleRunner", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedLists", "LinkedLists", "{8DA3D872-4162-43D1-866B-6AEC11748D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.LinkedLists", "Algorithms.LinkedLists\Algorithms.LinkedLists.csproj", "{062AFDA1-EBBD-4E98-96F9-09B8222285D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.LinkedLists", "Algorithms.LinkedLists\Algorithms.LinkedLists.csproj", "{062AFDA1-EBBD-4E98-96F9-09B8222285D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ArrayLists", "ArrayLists", "{CC1FDEA8-C7D9-424F-8976-93D15493CA41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StacksAndQueues", "StacksAndQueues", "{BE188736-6C4A-4F2C-B517-29764E04A32F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssociativeArrays", "AssociativeArrays", "{F4BD6E4A-874C-43D3-9568-5D508AE553CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
