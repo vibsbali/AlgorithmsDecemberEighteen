@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Algorithms.Trees
 {
@@ -60,7 +59,31 @@ namespace Algorithms.Trees
             return enumerationQueue;
         }
 
+        public IEnumerable<T> PostOrderTraversal()
+        {
+            var auxStack = new Stack<BinaryNode>();
+            auxStack.Push(Root);
 
+            var enumerationStack = new Stack<T>();
+
+            while (auxStack.Count > 0)
+            {
+                var current = auxStack.Pop();
+                enumerationStack.Push(current.Value);
+
+                if (current.HasLeftChild)
+                {
+                    auxStack.Push(current.Left);
+                }
+
+                if (current.HasRightChild)
+                {
+                    auxStack.Push(current.Right);
+                }
+            }
+
+            return enumerationStack;
+        }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -139,7 +162,10 @@ namespace Algorithms.Trees
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            foreach (var element in this)
+            {
+                array[arrayIndex++] = element;
+            }
         }
 
         public bool Remove(T item)
@@ -220,7 +246,13 @@ namespace Algorithms.Trees
                             tail = parent.Left;
                         }
 
-                        if (current.IsLeftOf(parent))
+                        if (previous == null)
+                        {
+                            Root = tail;
+                            Root.Left = current.Left;
+                            Root.Right = current.Right;
+                        }
+                        else if (current.IsLeftOf(previous))
                         {
                             current.Left = tail;
                             tail.Left = current.Left;
