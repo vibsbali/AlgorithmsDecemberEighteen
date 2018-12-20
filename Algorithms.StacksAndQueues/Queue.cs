@@ -17,15 +17,30 @@
             }
 
             backingStore = new T[size];
-            Head = Tail = 0;
+            Head = 0;
+            Tail = 0;
         }
 
-        internal int Head { get; set; }
+        internal int Count { get; private set; }
+
+        internal int Head { get; set; } 
         internal int Tail { get; set; }
 
         public void Enqueue(T item)
         {
             backingStore[Head++] = item;
+            ++Count;
+            if (Head > backingStore.Length)
+            {
+                if (Count < backingStore.Length)
+                {
+                    Head = 0;
+                }
+                if (Count > backingStore.Length)
+                {
+                    
+                }
+            }
         }
 
         public T Deque()
