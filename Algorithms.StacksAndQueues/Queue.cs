@@ -1,11 +1,13 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
+[assembly:InternalsVisibleTo("Algorithms.UnitTests")]
 namespace Algorithms.StacksAndQueues
 {
     public class Queue<T>
     {
         private T[] backingStore;
-
+        public int InitialSize { get; set; }
         public Queue()
             : this(4)
         {
@@ -18,7 +20,8 @@ namespace Algorithms.StacksAndQueues
                 size = 4;
             }
 
-            backingStore = new T[size];
+            InitialSize = size;
+            backingStore = new T[InitialSize];
             Head = 0;
             Tail = 0;
         }
@@ -33,7 +36,7 @@ namespace Algorithms.StacksAndQueues
             backingStore[Head++] = item;
             ++Count;
             //Is head getting beyond the size of backing store
-            if (Head > backingStore.Length)
+            if (Head == backingStore.Length)
             {
                 //check that we still have some space in the array
                 if (Count < backingStore.Length)
@@ -43,13 +46,12 @@ namespace Algorithms.StacksAndQueues
                     // H . . . . T
                     Head = 0;
                 }
-                else if(Count > backingStore.Length)
+                else
                 {
-                    //Tail has to be 0 otherwise we should not be in position of setting tail to 0
-                    Assert(Tail == 0, "Tail is not at zero but our count is greater than backing store");
-
+                    Assert(Tail == 0, "Tail has to be zero");
                     var temp = new T[backingStore.Length * 2];
-                    Array.Copy(backingStore, 0, temp, 0, Count - 1);
+                    Array.Copy(backingStore, 0, temp, 0, Count);
+                    backingStore = temp;
                 }
             }
             //Must be wrapped
@@ -71,15 +73,12 @@ namespace Algorithms.StacksAndQueues
                     Head = Count;
                     // 0 1 2 3 4 5 6 . . . . 12
                     // T . . . . . H
+                    backingStore = temp;
                 }
                 else
                 {
                     throw new ApplicationException("Missed a scenario");
                 }
-            }
-            else
-            {
-                Assert(false, "Head is neither zero nor equal to tail");
             }
         }
 
@@ -91,14 +90,16 @@ namespace Algorithms.StacksAndQueues
             }
         }
 
-        public T Deque()
+        public T Dequeue()
         {
             if (Count == 0)
             {
                 throw new InvalidOperationException("Cant call deque on empty queue");
             }
 
-            var valueToReturn = backingStore[Tail++];
+            var valueToReturn = backingStore[Tail];
+            backingStore[Tail++] = default(T);
+            --Count;
             
             if (Tail == backingStore.Length)
             {
@@ -110,9 +111,9 @@ namespace Algorithms.StacksAndQueues
                 var temp = new T[backingStore.Length / 2];
                 //Scenario 1
                 // 0 1 2 3 4 5 6
-                // A B C D E _ _
-                // T . . . H
-                // . T . . H
+                // A B C D E F G
+                // T . . . H . .
+                // . H . . T . .
                 if (Head < Tail)
                 {
                     Array.Copy(backingStore, Tail, temp, 0, backingStore.Length - Tail + 1);
@@ -127,10 +128,12 @@ namespace Algorithms.StacksAndQueues
                 // . T . . H
                 else
                 {
-                    Array.Copy(backingStore, 0, temp, 0, Head - Tail + 1);
+                    Array.Copy(backingStore, Tail, temp, 0, Head - Tail);
                     Tail = 0;
                     Head = Count;
                 }
+
+                backingStore = temp;
             }
 
             return valueToReturn;

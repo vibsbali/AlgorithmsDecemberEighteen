@@ -1,11 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("Algorithms.UnitTests")]
 namespace Algorithms.StacksAndQueues
 {
     public class Stack<T>
     {
         private T[] backingStore;
+        internal int InitialSize { get; set; }
 
         public Stack()
             : this(4)
@@ -18,8 +21,9 @@ namespace Algorithms.StacksAndQueues
             {
                 size = 4;
             }
-            
-            backingStore = new T[size];
+
+            InitialSize = size;
+            backingStore = new T[InitialSize];
         }
 
         internal int Count { get; private set; }
@@ -27,7 +31,7 @@ namespace Algorithms.StacksAndQueues
         public void Push(T item)
         {
             backingStore[Count++] = item;
-            if (Count > backingStore.Length)
+            if (Count == backingStore.Length)
             {
                 IncreaseSize();
             }
