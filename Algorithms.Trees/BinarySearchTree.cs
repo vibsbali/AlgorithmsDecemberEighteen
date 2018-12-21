@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
+
+[assembly:InternalsVisibleTo("Algorithms.UnitTests")]
 namespace Algorithms.Trees
 {
     public class BinarySearchTree<T> : ICollection<T>
@@ -36,21 +39,21 @@ namespace Algorithms.Trees
 
         public IEnumerable<T> BreadthFirstSearch()
         {
-            var auxStack = new Stack<BinaryNode>();
+            var auxQueue = new Queue<BinaryNode>();
             var enumerationQueue = new Queue<T>();
-            auxStack.Push(Root);
-            while (auxStack.Count > 0)
+            auxQueue.Enqueue(Root);
+            while (auxQueue.Count > 0)
             {
-                var current = auxStack.Pop();
+                var current = auxQueue.Dequeue();
 
                 if (current.HasLeftChild)
                 {
-                    auxStack.Push(current.Left);
+                    auxQueue.Enqueue(current.Left);
                 }
 
                 if (current.HasRightChild)
                 {
-                    auxStack.Push(current.Right);
+                    auxQueue.Enqueue(current.Right);
                 }
 
                 enumerationQueue.Enqueue(current.Value);
@@ -233,6 +236,8 @@ namespace Algorithms.Trees
                         {
                             previous.Right = current.Right;
                         }
+
+                        current.Right.Left = current.Left;
                     }
                     //Item to remove has a right child which has a left child
                     //promote left most child in current's place and update reference pointer

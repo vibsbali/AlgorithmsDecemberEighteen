@@ -19,9 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StacksAndQueues", "StacksAn
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AssociativeArrays", "AssociativeArrays", "{F4BD6E4A-874C-43D3-9568-5D508AE553CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.StacksAndQueues", "Algorithms.StacksAndQueues\Algorithms.StacksAndQueues.csproj", "{76C3611D-7917-436C-9293-F86C10ADE4C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.StacksAndQueues", "Algorithms.StacksAndQueues\Algorithms.StacksAndQueues.csproj", "{76C3611D-7917-436C-9293-F86C10ADE4C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.ArrayLists", "Algorithms.ArrayLists\Algorithms.ArrayLists.csproj", "{579122F3-19EC-4F67-A109-8C482E9B39C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.ArrayLists", "Algorithms.ArrayLists\Algorithms.ArrayLists.csproj", "{579122F3-19EC-4F67-A109-8C482E9B39C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.UnitTests", "Algorithms.UnitTests\Algorithms.UnitTests.csproj", "{6911AE96-E101-416E-A86D-93ACE5A92FCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{579122F3-19EC-4F67-A109-8C482E9B39C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{579122F3-19EC-4F67-A109-8C482E9B39C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{579122F3-19EC-4F67-A109-8C482E9B39C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6911AE96-E101-416E-A86D-93ACE5A92FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6911AE96-E101-416E-A86D-93ACE5A92FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6911AE96-E101-416E-A86D-93ACE5A92FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6911AE96-E101-416E-A86D-93ACE5A92FCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

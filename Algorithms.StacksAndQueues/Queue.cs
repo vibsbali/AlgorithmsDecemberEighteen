@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 
 namespace Algorithms.StacksAndQueues
 {
@@ -94,7 +93,47 @@ namespace Algorithms.StacksAndQueues
 
         public T Deque()
         {
+            if (Count == 0)
+            {
+                throw new InvalidOperationException("Cant call deque on empty queue");
+            }
 
+            var valueToReturn = backingStore[Tail++];
+            
+            if (Tail == backingStore.Length)
+            {
+                Tail = 0;
+            }
+
+            if (Count < backingStore.Length / 3 && backingStore.Length > 4)
+            {
+                var temp = new T[backingStore.Length / 2];
+                //Scenario 1
+                // 0 1 2 3 4 5 6
+                // A B C D E _ _
+                // T . . . H
+                // . T . . H
+                if (Head < Tail)
+                {
+                    Array.Copy(backingStore, Tail, temp, 0, backingStore.Length - Tail + 1);
+                    Array.Copy(backingStore, 0, temp, backingStore.Length - Tail + 1, Head);
+                    Tail = 0;
+                    Head = Count;
+                }
+                //Scenario 2
+                // 0 1 2 3 4 5 6
+                // A B C D E _ _
+                // T . . . H
+                // . T . . H
+                else
+                {
+                    Array.Copy(backingStore, 0, temp, 0, Head - Tail + 1);
+                    Tail = 0;
+                    Head = Count;
+                }
+            }
+
+            return valueToReturn;
         }
     }
 }
