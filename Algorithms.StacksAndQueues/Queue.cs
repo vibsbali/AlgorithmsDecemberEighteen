@@ -113,7 +113,7 @@ namespace Algorithms.StacksAndQueues
                 // 0 1 2 3 4 5 6
                 // A B C D E F G
                 // T . . . H . .
-                // . H . . T . .
+                // . H _ _ T . .
                 if (Head < Tail)
                 {
                     Array.Copy(backingStore, Tail, temp, 0, backingStore.Length - Tail + 1);
@@ -123,12 +123,12 @@ namespace Algorithms.StacksAndQueues
                 }
                 //Scenario 2
                 // 0 1 2 3 4 5 6
-                // A B C D E _ _
-                // T . . . H
-                // . T . . H
+                // A B C D E F G
+                // T . . . H . .
+                // _ T . . H _ _
                 else
                 {
-                    Array.Copy(backingStore, Tail, temp, 0, Head - Tail);
+                    Array.Copy(backingStore, Tail, temp, 0, Head - Tail + 1);
                     Tail = 0;
                     Head = Count;
                 }
