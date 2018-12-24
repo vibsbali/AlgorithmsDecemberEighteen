@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Algorithms.AssociativeArrays\Algorithms.AssociativeArrays.csproj" />
     <ProjectReference Include="..\Algorithms.Trees\Algorithms.Trees.csproj" />
   </ItemGroup>
 
