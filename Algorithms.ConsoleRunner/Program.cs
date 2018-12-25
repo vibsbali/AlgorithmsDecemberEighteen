@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Algorithms.Sorting;
 using Algorithms.Trees;
 
 namespace Algorithms.ConsoleRunner
@@ -33,20 +34,32 @@ namespace Algorithms.ConsoleRunner
 
             //PrintTree(bst);
 
-            var something = new Algorithms.AssociativeArrays.HashTable<int, int>(10);
-            something.Add(10, 10);
-            something.Add(20, 20);
-            something.Add(11, 23);
+            //var something = new Algorithms.AssociativeArrays.HashTable<int, int>(10);
+            //something.Add(10, 10);
+            //something.Add(20, 20);
+            //something.Add(11, 23);
 
-            something.Remove(11);
+            //something.Remove(11);
 
-           
-           
+            var sortingAlgorithm = new InsertionSort<int>();
+            var arrayToSort = new[]{9, 0, 9, 1, 0, 2, 33, 33, 2, 1, 8, -1, 4, 2, -3, 11, 0, 32};
+            sortingAlgorithm.Sort(arrayToSort);
 
-           
+            Print(arrayToSort);
+
+
+
         }
 
-        private static void PrintTree(BinarySearchTree<int> bst)
+       private static void Print(int[] arrayToSort)
+       {
+           foreach (var i in arrayToSort)
+           {
+               Console.WriteLine(i);
+           }
+       }
+
+       private static void PrintTree(BinarySearchTree<int> bst)
         {
             foreach (var item in bst.SortedEnumerable())
             {
