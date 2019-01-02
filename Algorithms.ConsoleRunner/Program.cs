@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Algorithms.Sorting;
 using Algorithms.Trees;
 
 namespace Algorithms.ConsoleRunner
@@ -41,13 +40,16 @@ namespace Algorithms.ConsoleRunner
 
             //something.Remove(11);
 
-            var sortingAlgorithm = new InsertionSort<int>();
-            var arrayToSort = new[]{9, 0, 9, 1, 0, 2, 33, 33, 2, 1, 8, -1, 4, 2, -3, 11, 0, 32};
-            sortingAlgorithm.Sort(arrayToSort);
+            //var sortingAlgorithm = new InsertionSort<int>();
+            //var arrayToSort = new[]{9, 0, 9, 1, 0, 2, 33, 33, 2, 1, 8, -1, 4, 2, -3, 11, 0, 32};
+            //sortingAlgorithm.Sort(arrayToSort);
 
-            Print(arrayToSort);
+            //Print(arrayToSort);
 
+            var dictionary = new Tries();
+            dictionary.Add("ab");
 
+            dictionary.Remove("ab");
 
         }
 
