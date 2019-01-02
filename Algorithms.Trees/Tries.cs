@@ -1,4 +1,8 @@
-﻿namespace Algorithms.Trees
+﻿using System;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+
+namespace Algorithms.Trees
 {
     public class Tries
     {
@@ -23,6 +27,7 @@
 
             var valueAsCharArray = value.ToLower().ToCharArray();
             var current = Root;
+
             for (var index = 0; index < valueAsCharArray.Length; index++)
             {
                 var character = valueAsCharArray[index];
@@ -33,7 +38,7 @@
 
                 if (index == valueAsCharArray.Length - 1)
                 {
-                    current.Value = value;
+                    current.Next[character].Value = value;
                 }
                 else
                 {
@@ -43,7 +48,6 @@
 
             ++Count;
         }
-
         public bool Find(string value)
         {
             //check value is not null or whitespace
@@ -84,6 +88,7 @@
             if (nodeToDelete != null)
             {
                 nodeToDelete.Value = default(string);
+                --Count;
                 return true;
             }
 
