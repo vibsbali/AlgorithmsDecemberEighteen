@@ -31,6 +31,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sorting", "Sorting", "{C284
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.Sorting", "Algorithms.Sorting\Algorithms.Sorting.csproj", "{6D8E03D6-E87E-428E-AC4F-10544038A211}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Graphs", "Graphs", "{AB1E6BB0-4D07-40C8-A751-776AE1B8DAE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.Graphs", "Algorithms.Graphs\Algorithms.Graphs.csproj", "{BFC33379-CCBE-4EF4-8AAB-632507F68B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,10 @@ Global
 		{6D8E03D6-E87E-428E-AC4F-10544038A211}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D8E03D6-E87E-428E-AC4F-10544038A211}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D8E03D6-E87E-428E-AC4F-10544038A211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC33379-CCBE-4EF4-8AAB-632507F68B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC33379-CCBE-4EF4-8AAB-632507F68B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC33379-CCBE-4EF4-8AAB-632507F68B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC33379-CCBE-4EF4-8AAB-632507F68B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{579122F3-19EC-4F67-A109-8C482E9B39C0} = {CC1FDEA8-C7D9-424F-8976-93D15493CA41}
 		{95E14A9E-2C0B-4338-956B-477A1BFA9C20} = {F4BD6E4A-874C-43D3-9568-5D508AE553CF}
 		{6D8E03D6-E87E-428E-AC4F-10544038A211} = {C284CA89-5808-4D1B-B35E-07160E753383}
+		{BFC33379-CCBE-4EF4-8AAB-632507F68B79} = {AB1E6BB0-4D07-40C8-A751-776AE1B8DAE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A234979D-7080-4CC0-A011-ABF430A3F960}
