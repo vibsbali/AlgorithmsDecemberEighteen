@@ -29,6 +29,7 @@ namespace Algorithms.Graphs
 
             NumberOfVertex = size;
             IsUndirected = isUndirected;
+            _backingList = new Dictionary(size);
             EdgesWithWeights = new Dictionary<Edge, int>();
         }
 
@@ -37,7 +38,7 @@ namespace Algorithms.Graphs
         public bool IsUndirected { get; private set; }
         public void AddVertex()
         {
-            throw new NotImplementedException();
+            NumberOfEdges++;
         }
 
         internal Dictionary<Edge, int> EdgesWithWeights { get; private set; }
@@ -69,11 +70,22 @@ namespace Algorithms.Graphs
             }
 
             ++NumberOfEdges;
+
+            if(IsUndirected)
+            {
+                AddEdge(vertexTwo, vertexOne, weight);
+            }
         }
 
         public IEnumerable<int> GetNeighbours(int vertex)
         {
-            throw new NotImplementedException();
+            if (vertexOne >= NumberOfVertex || vertexTwo >= NumberOfVertex)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+
+            var listOfEdges = _backingList[vertex].ToList();
+            return listOfEdges;
         }
 
         public int GetEdgeWeight(int firstVertex, int secondVertex)
@@ -82,6 +94,13 @@ namespace Algorithms.Graphs
             {
                 throw new ArgumentOutOfRangeException();
             }
+
+            if(EdgesWithWeights.ContainsKey(edge))
+            {
+                return EdgesWithWeights[edge];
+            } 
+
+            throw new InvalidOperationException("No edge found");
         }
     }
 }
