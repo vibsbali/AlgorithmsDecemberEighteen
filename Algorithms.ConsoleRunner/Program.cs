@@ -50,22 +50,17 @@ namespace Algorithms.ConsoleRunner
          //var dictionary = new Tries();
          //dictionary.Add("ab");
 
-         var adjMatrix = new AdjacencyList(8, true);
-         adjMatrix.AddEdge(0, 1);
-         adjMatrix.AddEdge(0, 7);
-         adjMatrix.AddEdge(1, 2);
-         adjMatrix.AddEdge(1, 4);
-         adjMatrix.AddEdge(2, 3);
-         adjMatrix.AddEdge(4, 5);
-         adjMatrix.AddEdge(5, 6);
-         adjMatrix.AddEdge(6, 7);
-         adjMatrix.AddVertex();
-         adjMatrix.AddVertex();
-
-         adjMatrix.AddEdge(8, 9);
-
-         var graphSearch = new DepthFirstSearch(adjMatrix);
-         graphSearch.AreConnected(3, 7);
+         var adjMatrix = new AdjacencyList(8, false);
+         adjMatrix.AddEdge(0, 1, 2);
+         adjMatrix.AddEdge(1, 2, 1);
+         adjMatrix.AddEdge(1, 4, 6);
+         adjMatrix.AddEdge(2, 3, 2);
+         adjMatrix.AddEdge(3, 5, 4);
+         adjMatrix.AddEdge(5, 4, 1);
+         adjMatrix.AddEdge(3, 4, 2);
+         
+         var graphSearch = new DijkstraSearch(adjMatrix);
+         graphSearch.AreConnected(0, 4);
 
          foreach (var i in graphSearch.GetPath())
          {
